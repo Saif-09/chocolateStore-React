@@ -1,18 +1,16 @@
-import ChocolateCard from "./components/ChocolateCard"
-import ChocolateList from "./components/ChocolateList"
-import Navbar from "./components/Navbar"
-
-
+import React from 'react';
+import ChocolateList from "./components/ChocolateList";
+import Navbar from "./components/Navbar";
+import ChocoContext from "./Context";
 
 function App() {
-
   return (
-    <>
-    <Navbar/>
-    <ChocolateList/>
-      
-    </>
-  )
+    <ChocoContext>
+      <Navbar />
+      <ChocolateList />
+    </ChocoContext>
+
+  );
 }
 
-export default App
+export default App;

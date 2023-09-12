@@ -8,6 +8,8 @@ const ChocolateList = () => {
             {chocolates.map((choco, index) => {
                 return (
                     <ChocolateCard
+                        key={index}
+                        id={choco['id']}
                         name={choco['name']}
                         price={choco['price']}
                         image_url={choco['image_url']}
