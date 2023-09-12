@@ -25,7 +25,7 @@ const ChocolateCard = ({ name, price, image_url ,id}) => {
                 </button>
                 
                 {isQuantityGT0 ? (
-                    <div className='bg-zinc-600 hover:bg-orange-400 text-white px-3 py-2 rounded font-semibold'>Qty:{qty}</div>
+                    <div className='bg-zinc-600 text-white px-3 py-2 rounded font-semibold'>Qty:{qty}</div>
                 ) : null}
                 <button
                     className="bg-yellow-500 hover:bg-yellow-300 text-white px-3 py-2 mr-3 rounded font-semibold"
