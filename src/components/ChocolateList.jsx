@@ -4,7 +4,7 @@ import ChocolateCard from './ChocolateCard';
 
 const ChocolateList = () => {
     return (
-        <div className='flex flex-wrap justify-center bg-slate-950 pt-7 gap-4'>
+        <div className='flex flex-wrap justify-center bg-slate-950 pt-24 gap-4'>
             {chocolates.map((choco, index) => {
                 return (
                     <ChocolateCard
@@ -13,6 +13,7 @@ const ChocolateList = () => {
                         name={choco['name']}
                         price={choco['price']}
                         image_url={choco['image_url']}
+                        qty={choco['quantity']}
                     />)
                 // console.log(choco['price'])
 

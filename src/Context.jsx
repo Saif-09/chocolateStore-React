@@ -12,14 +12,16 @@ const ChocoContext = ({ children }) => {
     const [total, setTotal] = useState(0);
     const [item, setItem] = useState(0);
     const [cart, setCart] = useState([]);
+    const [qty, SetQty] = useState(0)
 
     const handleAdd = (prod) => {
-       if(cart.length<8){
+        if(cart.length<8){
         console.log('inside handleAdd');
         console.log('first',cart)
         const index = cart.findIndex((item) => item.id === prod.id);
         console.log('second',cart)
         console.log('index',index)
+        
 
         if (index === -1) {
             setCart([...cart, { ...prod, qty: 1 }]);
@@ -27,6 +29,7 @@ const ChocoContext = ({ children }) => {
         } else if(cart.reduce((acc, item) => acc + item.qty, 0) < 8){
             const updatedCart = [...cart];
             updatedCart[index].qty++;
+             SetQty(updatedCart[index].qty)
             setCart(updatedCart);
             setTotal(total + prod.price);
         }else {
@@ -61,7 +64,7 @@ const ChocoContext = ({ children }) => {
 
 
     return (
-        <itemContext.Provider value={{ total, item, handleAdd, handleRemove }}>
+        <itemContext.Provider value={{ total, item, handleAdd, handleRemove,qty ,cart}}>
             {children}
         </itemContext.Provider>
     )
