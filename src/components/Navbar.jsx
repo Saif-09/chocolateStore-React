@@ -1,23 +1,25 @@
 import React from 'react';
-import {useValue} from "../Context";
+import { useValue } from '../Context';
 
 const Navbar = () => {
-    const{item,total} = useValue();
-    console.log(item, total)
+    const { item, total } = useValue();
+
     return (
-        <div className="bg-gray-800 text-white p-4 flex justify-between gap-12 items-center w-full h-20 fixed ">
-            <div className="text-2xl font-bold ml-10 sm:text-4xl">Chocolate Store</div>
-            <div className="flex gap-4 mr-10">
-                <div>
-                    <span className="font-bold text-xl text-orange-400">Total price:</span>
-                    <span className="ml-2 text-xl text-orange-600">{total}</span>
-                </div>
-                <div>
-                    <span className="font-bold text-xl text-orange-400">Cart Items:</span>
-                    <span className="ml-2 text-xl text-orange-600">{item}</span>
+        <nav className="bg-white text-gray-800 p-4 shadow-md fixed top-0 left-0 right-0 z-10">
+            <div className="container mx-auto flex justify-between items-center h-20">
+                <div className="text-3xl font-bold">Chocolate Store</div>
+                <div className="flex gap-6">
+                    <div>
+                        <span className="font-semibold text-lg text-orange-400">Total Price:</span>
+                        <span className="ml-2 text-lg text-orange-600">&#x20B9; {total}</span>
+                    </div>
+                    <div>
+                        <span className="font-semibold text-lg text-orange-400">Cart Items:</span>
+                        <span className="ml-2 text-lg text-orange-600">{item}</span>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
     );
 };
 
